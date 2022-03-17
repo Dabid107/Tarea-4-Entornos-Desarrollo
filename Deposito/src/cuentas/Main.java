@@ -7,9 +7,16 @@
 
 package cuentas;
 
-
+/**
+ *
+ * @author david
+ */
 public class Main {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         CCuenta cuenta1;
         double saldo;
@@ -21,15 +28,20 @@ public class Main {
         operativa_cuenta(cuenta1, 0);
     }
 
+    /**
+     * Método por el que se realiza una retirada de dinero y después un ingreso
+     * @param cuenta1 Objeto que corresponde a la clase CCuenta creado en el método main
+     * @param cantidad Cantidad de dinero que se retira y se ingresa en la cuenta
+     */
     public static void operativa_cuenta(CCuenta cuenta1, float cantidad) {
         try {
-            cuenta1.retirar(2300);
+            cuenta1.retirar(cantidad);
         } catch (Exception e) {
             System.out.print("Fallo al retirar");
         }
         try {
             System.out.println("Ingreso en cuenta");
-            cuenta1.ingresar(695);
+            cuenta1.ingresar(cantidad);
         } catch (Exception e) {
             System.out.print("Fallo al ingresar");
         }
